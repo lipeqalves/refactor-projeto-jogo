@@ -1,4 +1,4 @@
-import { CardPersonagem } from "./card_personagem";
+import { CardPersonagem } from "../card_personagem";
 import { Container, ContainerImg, Text, TextH2,ImgResponsiva } from "./styles";
 
 
@@ -30,9 +30,9 @@ export const CardPrincipal = () => {
         </Text>
       </article>
       <ContainerImg>
-      <CardPersonagem nomePersonagem="Zeus" urlImg="https://uploads.spiritfanfiction.com/historias/capas/202011/o-raio-de-zeus-21101400-261120200857.jpg" />
-      <CardPersonagem nomePersonagem="Pandora" urlImg="https://mitologia.hi7.co/mitologia/mitologia-57ac36985a5fa.jpg" />
-      <CardPersonagem nomePersonagem="Epimeteu" urlImg="http://3.bp.blogspot.com/-1hckDuYE1TM/Uemw7BukfYI/AAAAAAAAAMA/byB5BSgSUdU/s1600/EPIMETEU+(%E1%BC%98%CF%80%CE%B9%CE%BC%CE%B7%CE%B8%CE%B5%CF%8D%CF%82).+Por+Genzoman..jpg" />
+      <CardPersonagem nomePersonagem="Zeus" urlImg="https://uploads.spiritfanfiction.com/historias/capas/202011/o-raio-de-zeus-21101400-261120200857.jpg" variant={""} />
+      <CardPersonagem nomePersonagem="Pandora" urlImg="https://mitologia.hi7.co/mitologia/mitologia-57ac36985a5fa.jpg" variant={""} />
+      <CardPersonagem nomePersonagem="Epimeteu" urlImg="http://3.bp.blogspot.com/-1hckDuYE1TM/Uemw7BukfYI/AAAAAAAAAMA/byB5BSgSUdU/s1600/EPIMETEU+(%E1%BC%98%CF%80%CE%B9%CE%BC%CE%B7%CE%B8%CE%B5%CF%8D%CF%82).+Por+Genzoman..jpg" variant={""} />
       </ContainerImg>
       <ImgResponsiva>
       <img src="http://grecopersa.weebly.com/uploads/6/8/8/8/6888060/1377967282.jpg" alt="" />

@@ -9,7 +9,6 @@ export const HeaderStyled = styled.header`
     @media (max-width: 488px) {
     flex-direction: column;
     justify-content: center;
-    font-size: 18px;
     margin-bottom: 10px;
     gap: 5px;
   }
@@ -23,7 +22,10 @@ margin-bottom:10px ;
 
 @media (max-width: 488px) {
     font-size: 28px;
+  }
 
+  @media (max-width: 390px) {
+    font-size: 22px;
   }
 
 `

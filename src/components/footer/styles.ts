@@ -4,6 +4,6 @@ export const FooterStyled = styled.footer`
     display: flex;
     align-items:center;
     justify-content: end;
-    margin-right: 10px;
+    margin-right: 25px;
 
 `
