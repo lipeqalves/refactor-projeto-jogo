@@ -1,24 +1,32 @@
-import { Link, useNavigate} from "react-router-dom";
+import { useContext } from "react";
+import {  useNavigate} from "react-router-dom";
 import { Button } from "../../components/button";
 import { CardPersonagem } from "../../components/card_personagem";
 import { Footer } from "../../components/footer";
 import { Header } from "../../components/header";
-import { Input } from "../../components/input";
-import { Container, Conteudo,ContainerPincipal } from "./styles";
+import { GlobalContext } from "../../context/context";
+import { Container, Conteudo,ContainerPincipal, DivImg } from "./styles";
 
 
 export const Zeus = () => {
 const navigate = useNavigate()
-
-  const stegeOne = () =>{
+const {setCont,setResposta, setMsg, setStege,setPontuacao} = useContext(GlobalContext)
+  const nextStage = () =>{
+    setStege(1)
+    setCont(1)
+    setResposta("")
+    setMsg("")
+    setPontuacao(0)
     navigate("/zeus/stegeone")
   }
 
   return (
     <ContainerPincipal>
-    <Header onClick={() =>{}} title="ZEUS" tituloBtn={"Voltar"} />
+    <Header onClick={() => { } } title="ZEUS" tituloBtn={"Voltar"}  />
     <Container>
+    <DivImg>
       <CardPersonagem nomePersonagem={"Zeus"} urlImg="https://uploads.spiritfanfiction.com/historias/capas/202011/o-raio-de-zeus-21101400-261120200857.jpg" variant={""}/>
+    </DivImg>
       <Conteudo>
         <h1>Stage one</h1>
         <p>
@@ -40,7 +48,7 @@ const navigate = useNavigate()
           homens a capacidade de controlar o fogo. Para tanto, Zeus decide criar uma mulher
           repleta de dotes oferecidos pelos deuses e a oferece a Epimeteu, irmão de Prometeu.
         </p>
-        <Button name={"Iniciar"} onClick={stegeOne}/>
+        <Button name={"Iniciar"} onClick={nextStage}/>
       </Conteudo>
     </Container>
     <Footer text="Filipe Alves 2023"/>

@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components'
 
-interface Iprops {
+interface IProps {
   isDisabled: boolean,
 }
 
-export const ButtonStyled = styled.button<Iprops>`
+export const ButtonStyled = styled.button<IProps>`
 
     ${(props) => {
     switch (props.isDisabled) {

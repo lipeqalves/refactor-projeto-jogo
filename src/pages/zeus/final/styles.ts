@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.section`
     display: flex;
@@ -41,5 +41,29 @@ flex-direction: column;
     margin-left: 20px;
     padding: 10px;
   }
+
+`
+interface IProps{
+  error: boolean;
+}
+export const Msg = styled.p<IProps>`
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+
+  ${(props) =>{
+    switch(props.error){
+      case false:
+        return css`
+          color:green;
+      `;
+      default:
+        return css`
+          color: red;
+    `
+
+    }
+  }}
+
 
 `

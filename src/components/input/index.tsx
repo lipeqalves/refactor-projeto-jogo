@@ -12,7 +12,6 @@ const [resposta, setResposta] = useState<string>("")
   const handlerResposta = (e: FormEvent) => {
     e.preventDefault()
     handler(resposta)
-    console.log("no input:",resposta)
   }
 
   return(

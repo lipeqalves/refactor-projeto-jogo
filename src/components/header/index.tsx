@@ -6,13 +6,14 @@ interface IProps {
     title: string,
     tituloBtn: string
     onClick: () => void
+    isDisabled?: boolean
 }
 
-export const Header = ({title,tituloBtn, onClick}:IProps) => {
+export const Header = ({title,tituloBtn, onClick, isDisabled}:IProps) => {
   return(
   <HeaderStyled>
     <TitleH1>{title}</TitleH1>
-    <Button onClick={onClick} name={tituloBtn}/>
+    <Button onClick={onClick} name={tituloBtn} isDisabled={isDisabled}/>
   </HeaderStyled>
   )
 };

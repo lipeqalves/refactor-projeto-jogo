@@ -19,11 +19,9 @@ justify-content: space-evenly;
 
 export const ImgResponsiva = styled.div`
   display: none;
-
   @media (max-width: 768px) {
-    display: block;
+  display: block;
    text-align: center;
-
     & > img{
       width: 300px;
       height: 200px;
@@ -33,8 +31,6 @@ export const ImgResponsiva = styled.div`
     box-shadow: 0px 6px 5px 3px rgba(0,0,0,0.75);
     }
   }
-
-
 `
 
 export const Text = styled.p`

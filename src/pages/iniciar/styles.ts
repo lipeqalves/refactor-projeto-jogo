@@ -8,9 +8,8 @@ export const Container = styled.main`
     min-height: 100%;
     min-width:  100vw;
     padding: 5px;
-
-
 `
+
 export const Conteudo = styled.section`
   display: flex;
   align-items: center;

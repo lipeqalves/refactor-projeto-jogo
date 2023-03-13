@@ -18,7 +18,6 @@ export const Iniciar = () =>{
   return(
 
     <Container>
-
       <Header title="Escolha um personagem" tituloBtn={"voltar"} onClick={mudarPagina} />
       <Conteudo >
       <CardPersonagem onClick={escolherZeus} variant="secundary" nomePersonagem="Zeus" urlImg="https://uploads.spiritfanfiction.com/historias/capas/202011/o-raio-de-zeus-21101400-261120200857.jpg" />
@@ -26,7 +25,6 @@ export const Iniciar = () =>{
       <CardPersonagem variant="secundary" nomePersonagem="Epimeteu" urlImg="http://3.bp.blogspot.com/-1hckDuYE1TM/Uemw7BukfYI/AAAAAAAAAMA/byB5BSgSUdU/s1600/EPIMETEU+(%E1%BC%98%CF%80%CE%B9%CE%BC%CE%B7%CE%B8%CE%B5%CF%8D%CF%82).+Por+Genzoman..jpg" />
       </Conteudo >
       <Footer text="Filipe Alves 2023"/>
-
     </Container>
   )
 }
