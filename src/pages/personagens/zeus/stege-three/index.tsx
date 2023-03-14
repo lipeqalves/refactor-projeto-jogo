@@ -1,13 +1,13 @@
 
 import { useContext } from "react";
 import { useNavigate} from "react-router-dom";
-import { Button } from "../../../components/button";
-import { CardPersonagem } from "../../../components/card_personagem";
-import { Footer } from "../../../components/footer";
-import { Header } from "../../../components/header";
-import { Input } from "../../../components/input";
-import { GlobalContext } from "../../../context/context";
-import { Container, Conteudo,ContainerPincipal, DivImg, Msg } from "./styles";
+import { Button } from "../../../../components/button";
+import { CardPersonagem } from "../../../../components/card_personagem";
+import { Footer } from "../../../../components/footer";
+import { Header } from "../../../../components/header";
+import { Input } from "../../../../components/input";
+import { GlobalContext } from "../../../../context/context";
+import { Container, Conteudo,ContainerPincipal, DivImg, Msg, Li } from "../../styles/styles.stege";
 
 export const StageThree = () => {
 const navigate = useNavigate()
@@ -52,11 +52,11 @@ const {
         ela(Para usar na vingança de Zeus contra os irmãos), qual era esse item?
         </p>
         <ul>
-          <li>a) Uma caixa misteriosa, que não poderia ser aberta</li>
-          <li>b) Uma espada</li>
-          <li>c) Um veneno mortal</li>
-          <li>d) Nenhuma das alternativas</li>
-          <li>e) Todas as alternativas</li>
+          <Li error={isDisabled}>a) Uma caixa misteriosa, que não poderia ser aberta</Li>
+          <Li>b) Uma espada</Li>
+          <Li>c) Um veneno mortal</Li>
+          <Li>d) Nenhuma das alternativas</Li>
+          <Li>e) Todas as alternativas</Li>
         </ul>
         {cont <= 3 && resposta !== "a" ? <><Input  /> <Msg error={isDisabled}>{msg}</Msg> </>:<Msg error={isDisabled} >{msg}</Msg> }
         <Button name={"Resultado"} onClick={nextStage } isDisabled={isDisabled}  />

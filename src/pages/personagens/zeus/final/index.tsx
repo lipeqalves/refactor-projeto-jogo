@@ -1,13 +1,13 @@
 
 import { useContext } from "react";
 import { useNavigate} from "react-router-dom";
-import { Button } from "../../../components/button";
-import { CardPersonagem } from "../../../components/card_personagem";
-import { Footer } from "../../../components/footer";
-import { Header } from "../../../components/header";
-import { Input } from "../../../components/input";
-import { GlobalContext } from "../../../context/context";
-import { Container, Conteudo,ContainerPincipal, DivImg, Msg } from "./styles";
+import { Button } from "../../../../components/button";
+import { CardPersonagem } from "../../../../components/card_personagem";
+import { Footer } from "../../../../components/footer";
+import { Header } from "../../../../components/header";
+import { Input } from "../../../../components/input";
+import { GlobalContext } from "../../../../context/context";
+import { Container, Conteudo,ContainerPincipal, DivImg, Msg } from "../../styles/styles.final";
 
 export const Final = () => {
 const navigate = useNavigate()

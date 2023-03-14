@@ -1,13 +1,13 @@
 
 import { useContext } from "react";
 import { useNavigate} from "react-router-dom";
-import { Button } from "../../../components/button";
-import { CardPersonagem } from "../../../components/card_personagem";
-import { Footer } from "../../../components/footer";
-import { Header } from "../../../components/header";
-import { Input } from "../../../components/input";
-import { GlobalContext } from "../../../context/context";
-import { Container, Conteudo,ContainerPincipal, DivImg, Msg } from "./styles";
+import { Button } from "../../../../components/button";
+import { CardPersonagem } from "../../../../components/card_personagem";
+import { Footer } from "../../../../components/footer";
+import { Header } from "../../../../components/header";
+import { Input } from "../../../../components/input";
+import { GlobalContext } from "../../../../context/context";
+import { Container, Conteudo,ContainerPincipal, DivImg, Msg, Li } from "../../styles/styles.stege";
 
 export const StageTwo = () => {
 const navigate = useNavigate()
@@ -44,11 +44,11 @@ const { isDisabled,setIsDisabled, msg, cont, setCont, resposta,setResposta, setM
         A mais Perfeita e irresistível mulher. Qual o nome dessa mulher? ?
         </p>
         <ul>
-          <li>a) Antena</li>
-          <li>b) Pandora</li>
-          <li>c) Afrodite</li>
-          <li>d) Gaia</li>
-          <li>e) Réia</li>
+          <Li>a) Antena</Li>
+          <Li error={isDisabled}>b) Pandora</Li>
+          <Li>c) Afrodite</Li>
+          <Li>d) Gaia</Li>
+          <Li>e) Réia</Li>
         </ul>
         {cont <= 3 && resposta !== "b" ? <><Input  /> <Msg error={isDisabled}>{msg}</Msg> </>:<Msg error={isDisabled} >{msg} </Msg> }
         <Button name={"Proximo"} onClick={nextStage} isDisabled={isDisabled}  />

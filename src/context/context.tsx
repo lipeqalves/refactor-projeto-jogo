@@ -1,9 +1,10 @@
 import { createContext, ReactNode, useState} from "react";
+import { personageStege } from "../services/util/personagem-stege";
 
 interface IGlobalContext {
   resposta: string
   setResposta:(newState: string) => void
-  handler: (res: string) => void
+  handlerResults: (res: string) => void
   isDisabled: boolean
   setIsDisabled:(newState: boolean) => void
   msg: string
@@ -14,6 +15,8 @@ interface IGlobalContext {
   setPontuacao: (pontuacao: number) => void
   stege:number
   setStege: (stage: number) => void
+  personagem: string
+  setPersonagem: (personagem: string) => void
 }
 interface UserContextProps{
   children:ReactNode,
@@ -22,7 +25,7 @@ interface UserContextProps{
 const initialValue ={
   resposta: "",
   setResposta: () => {},
-  handler: () => {},
+  handlerResults: () => {},
   isDisabled: true,
   setIsDisabled: () => {},
   msg: "",
@@ -32,7 +35,9 @@ const initialValue ={
   pontuacao: 0,
   setPontuacao: () => {},
   stege:0,
-  setStege: () => {}
+  setStege: () => {},
+  personagem: "",
+  setPersonagem: () => {},
 }
 export const GlobalContext = createContext<IGlobalContext>(initialValue);
 
@@ -43,15 +48,12 @@ export const UserGlobalContext = ({children}: UserContextProps) =>{
   const [cont, setCont] = useState(initialValue.cont)
   const [pontuacao, setPontuacao] = useState(initialValue.pontuacao)
   const [stege, setStege] = useState(initialValue.stege)
-  let respostaStege = ""
+  const [personagem, setPersonagem] = useState(initialValue.personagem)
 
-  const handler = (res: string) => {
-    if(stege === 1) respostaStege = "c"
-    if(stege === 2) respostaStege = "b"
-    if(stege === 3) respostaStege = "a"
+  const handlerResults = (res: string) => {
     setResposta(res)
     switch (res) {
-      case respostaStege:
+      case personageStege(stege,personagem):
         setIsDisabled(false);
         setMsg("Parabéns!!! Você esta sabendo da Historia.")
         if(cont === 1){
@@ -76,6 +78,8 @@ export const UserGlobalContext = ({children}: UserContextProps) =>{
   }
   return(
     <GlobalContext.Provider value={{
+      personagem,
+      setPersonagem,
       pontuacao,
       setPontuacao,
       cont,
@@ -84,7 +88,7 @@ export const UserGlobalContext = ({children}: UserContextProps) =>{
       setMsg,
       resposta,
       setResposta,
-      handler,
+      handlerResults,
       setIsDisabled,
       isDisabled,
       stege,

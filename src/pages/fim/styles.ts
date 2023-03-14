@@ -18,8 +18,10 @@ export const Conteudo = styled.div`
   &> ul{
     display: flex;
     gap: 60px;
-    padding: 10px;
     list-style-type: none;
+    @media (max-width: 700px) {
+      gap: 30px;
+  }
   }
 `
 export const Img = styled.div`
@@ -32,6 +34,10 @@ export const Img = styled.div`
    -moz-box-shadow: 0px 6px 5px 3px rgba(0,0,0,0.75);
    box-shadow: 0px 6px 5px 3px rgba(0,0,0,0.75);
 
+   @media (max-width: 700px) {
+    width: 300px;
+    height: 200px;
+  }
   }
 
 

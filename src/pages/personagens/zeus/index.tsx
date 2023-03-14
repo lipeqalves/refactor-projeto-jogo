@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import {  useNavigate} from "react-router-dom";
-import { Button } from "../../components/button";
-import { CardPersonagem } from "../../components/card_personagem";
-import { Footer } from "../../components/footer";
-import { Header } from "../../components/header";
-import { GlobalContext } from "../../context/context";
-import { Container, Conteudo,ContainerPincipal, DivImg } from "./styles";
+import { Button } from "../../../components/button";
+import { CardPersonagem } from "../../../components/card_personagem";
+import { Footer } from "../../../components/footer";
+import { Header } from "../../../components/header";
+import { GlobalContext } from "../../../context/context";
+import { Container, Conteudo,ContainerPincipal, DivImg } from "../styles/styles";
 
 
 export const Zeus = () => {
@@ -19,16 +19,19 @@ const {setCont,setResposta, setMsg, setStege,setPontuacao} = useContext(GlobalCo
     setPontuacao(0)
     navigate("/zeus/stegeone")
   }
+  const paginaInicial = () =>{
+    navigate("/")
+  }
 
   return (
     <ContainerPincipal>
-    <Header onClick={() => { } } title="ZEUS" tituloBtn={"Voltar"}  />
+    <Header onClick={paginaInicial } title="ZEUS" tituloBtn={"Voltar"}  />
     <Container>
     <DivImg>
       <CardPersonagem nomePersonagem={"Zeus"} urlImg="https://uploads.spiritfanfiction.com/historias/capas/202011/o-raio-de-zeus-21101400-261120200857.jpg" variant={""}/>
     </DivImg>
       <Conteudo>
-        <h1>Stage one</h1>
+        <h1>Historia</h1>
         <p>
           Zeus era a divindade mais poderosa e mais importante do panteão grego.
           Era conhecido como rei dos deuses e deus do raio, do trovão e dos céus.

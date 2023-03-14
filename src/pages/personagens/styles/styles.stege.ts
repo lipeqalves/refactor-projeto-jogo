@@ -44,7 +44,7 @@ flex-direction: column;
 
 `
 interface IProps{
-  error: boolean;
+  error?: boolean;
 }
 export const Msg = styled.p<IProps>`
   text-align: center;
@@ -63,7 +63,20 @@ export const Msg = styled.p<IProps>`
     `
 
     }
-  }}
+  }
+  }
 
+`
+export const Li = styled.li<IProps>`
+  list-style-type: none;
+  ${(props) =>{
+    switch(props.error){
+      case false:
+        return css`
+          color:green;
+      `;
+    }
+  }
+  }
 
 `

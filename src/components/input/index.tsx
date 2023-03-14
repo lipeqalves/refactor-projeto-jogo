@@ -5,13 +5,13 @@ import { Form, Content } from "./styles"
 
 export const Input = () => {
 
-const { handler } = useContext(GlobalContext)
+const { handlerResults } = useContext(GlobalContext)
 
 const [resposta, setResposta] = useState<string>("")
 
   const handlerResposta = (e: FormEvent) => {
     e.preventDefault()
-    handler(resposta)
+    handlerResults(resposta)
   }
 
   return(
